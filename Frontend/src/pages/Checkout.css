@@ -1,0 +1,98 @@
+.checkout-page {
+  padding-top: 120px;
+  min-height: 100vh;
+  background: var(--white);
+}
+
+.checkout-empty {
+  padding-top: 150px;
+  text-align: center;
+  min-height: 60vh;
+}
+
+.checkout-empty h2 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--pine-dark);
+  margin-bottom: 24px;
+}
+
+.checkout-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  padding: 0 24px 60px;
+}
+
+.checkout-form-container h2, .checkout-summary h2 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--pine-dark);
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(45,90,61,0.1);
+  padding-bottom: 12px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: var(--text-mid);
+  font-weight: 500;
+}
+
+.form-group input, .form-group textarea {
+  padding: 12px;
+  border: 1px solid rgba(45,90,61,0.2);
+  border-radius: 4px;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--pine);
+}
+
+.btn-submit {
+  margin-top: 16px;
+}
+
+.checkout-summary {
+  background: var(--cream);
+  padding: 32px;
+  border-radius: 4px;
+  height: fit-content;
+}
+
+.summary-items {
+  margin-bottom: 24px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: var(--text-mid);
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--pine-dark);
+  border-top: 1px solid rgba(45,90,61,0.1);
+  padding-top: 16px;
+}

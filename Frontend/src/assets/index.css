@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+:root {
+  --pine: #2d5a3d;
+  --pine-dark: #1a3826;
+  --pine-light: #3d7a54;
+  --pine-pale: #e8f0ea;
+  --blue: #2c5f7a;
+  --blue-light: #4a89a8;
+  --blue-pale: #e4eff5;
+  --white: #fafaf6;
+  --cream: #f5f0e8;
+  --text: #1a2818;
+  --text-mid: #4a5c47;
+  --text-light: #7a8c77;
+  --gold: #c8a45a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--white);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Base button styles */
+.btn-primary {
+  background: var(--gold);
+  color: var(--pine-dark);
+  padding: 14px 32px;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 2px;
+  transition: all 0.25s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #d4b06a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  background: transparent;
+  padding: 14px 32px;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 400;
+  border-radius: 2px;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  border-color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.05);
+}
+
+/* Sections */
+section { padding: 100px 60px; }
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--pine-light);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-label::before {
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--pine-light);
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 52px);
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--pine-dark);
+}
+
+.section-title em { font-style: italic; color: var(--pine-light); }

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\GaziogluCiftlik.API.props" />
+</Project>
