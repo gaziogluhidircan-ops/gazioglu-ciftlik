@@ -20,7 +20,8 @@ namespace GaziogluCiftlik.API.Models
 
         public decimal TotalAmount { get; set; }
 
-        public string Status { get; set; } = "Pending"; // Pending, Shipped, Completed, Cancelled
+        [MaxLength(50)]
+public string Status { get; set; } = "Pending"; // Pending, Shipped, Completed, Cancelled
 
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 

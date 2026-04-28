@@ -24,8 +24,5 @@ namespace GaziogluCiftlik.API.Models
 
         // Foreign Key
         public int CategoryId { get; set; }
-        
-        // Navigation property
-        public Category? Category { get; set; }
     }
 }

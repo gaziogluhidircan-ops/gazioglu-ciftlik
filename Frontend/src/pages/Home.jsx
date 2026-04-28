@@ -18,14 +18,20 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    // In a real app, this fetches from ASP.NET API
-    // axiosClient.get('/products').then(res => setProducts(res.data)).catch(err => console.error(err));
-    
-    // Using mock data for immediate UI rendering
-    setTimeout(() => {
-      setProducts(fallbackProducts);
-      setLoading(false);
-    }, 500);
+    const fetchProducts = async () => {
+      try {
+        const response = await axiosClient.get('/products');
+        setProducts(response.data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        // Fallback to mock data if API fails
+        setProducts(fallbackProducts);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
   }, []);
 
   return (
@@ -63,7 +69,21 @@ const Home = () => {
         </div>
         
         {loading ? (
-          <div className="loading">Yükleniyor...</div>
+          <div className="products-loading">
+            {[...Array(6)].map((_, index) => (
+              <div key={index} className="product-skeleton">
+                <div className="skeleton-image"></div>
+                <div className="skeleton-content">
+                  <div className="skeleton-title"></div>
+                  <div className="skeleton-description"></div>
+                  <div className="skeleton-footer">
+                    <div className="skeleton-price"></div>
+                    <div className="skeleton-button"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         ) : (
           <div className="products-grid">
             {products.map(product => (

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosClient = axios.create({
-  baseURL: 'https://localhost:7083/api', // Adjust port based on backend launchSettings.json
+  baseURL: 'http://localhost:5155/api', // Updated to match backend port
   headers: {
     'Content-Type': 'application/json'
   }

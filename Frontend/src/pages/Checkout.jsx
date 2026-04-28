@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import useCartStore from '../store/useCartStore';
 import { useNavigate } from 'react-router-dom';
 import axiosClient from '../api/axiosClient';
+import { validateCheckoutForm } from '../utils/validation';
 import './Checkout.css';
 
 const Checkout = () => {
@@ -12,6 +13,8 @@ const Checkout = () => {
     phone: '',
     address: ''
   });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (cartItems.length === 0) {
     return (
@@ -40,6 +43,16 @@ const Checkout = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    // Validate form
+    const validation = validateCheckoutForm(formData);
+    if (!validation.isValid) {
+      setErrors(validation.errors);
+      return;
+    }
+    
+    setIsSubmitting(true);
+    setErrors({});
+    
     // Construct Order object
     const order = {
       customerName: formData.name,
@@ -55,18 +68,20 @@ const Checkout = () => {
 
     try {
       // Send to API
-      // await axiosClient.post('/orders', order);
+      await axiosClient.post('/orders', order);
       
       // Open WhatsApp
       const waLink = `https://wa.me/905550000000?text=${generateWhatsAppMessage()}`;
       window.open(waLink, '_blank');
       
       clearCart();
-      alert('Siparişiniz alındı. WhatsApp üzerinden iletişime geçebilirsiniz.');
+      alert('Siparişiniz başarıyla oluşturuldu. WhatsApp üzerinden iletişime geçebilirsiniz.');
       navigate('/');
     } catch (error) {
       console.error("Order error", error);
-      alert('Sipariş oluşturulurken bir hata oluştu.');
+      alert('Sipariş oluşturulurken bir hata oluştu. Lütfen tekrar deneyin.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -78,17 +93,48 @@ const Checkout = () => {
           <form className="checkout-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label>Ad Soyad</label>
-              <input type="text" name="name" required value={formData.name} onChange={handleInputChange} />
+              <input 
+                type="text" 
+                name="name" 
+                required 
+                value={formData.name} 
+                onChange={handleInputChange}
+                className={errors.name ? 'error' : ''}
+              />
+              {errors.name && <span className="error-message">{errors.name}</span>}
             </div>
             <div className="form-group">
               <label>Telefon</label>
-              <input type="tel" name="phone" required value={formData.phone} onChange={handleInputChange} />
+              <input 
+                type="tel" 
+                name="phone" 
+                required 
+                value={formData.phone} 
+                onChange={handleInputChange}
+                placeholder="5XXXXXXXXX"
+                className={errors.phone ? 'error' : ''}
+              />
+              {errors.phone && <span className="error-message">{errors.phone}</span>}
             </div>
             <div className="form-group">
               <label>Teslimat Adresi</label>
-              <textarea name="address" rows="4" required value={formData.address} onChange={handleInputChange}></textarea>
+              <textarea 
+                name="address" 
+                rows="4" 
+                required 
+                value={formData.address} 
+                onChange={handleInputChange}
+                className={errors.address ? 'error' : ''}
+              ></textarea>
+              {errors.address && <span className="error-message">{errors.address}</span>}
             </div>
-            <button type="submit" className="btn-primary btn-submit">Siparişi Tamamla & WhatsApp'a Git</button>
+            <button 
+              type="submit" 
+              className="btn-primary btn-submit"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'İşleniyor...' : 'Siparişi Tamamla & WhatsApp\'a Git'}
+            </button>
           </form>
         </div>
         

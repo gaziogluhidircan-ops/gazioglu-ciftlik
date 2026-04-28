@@ -1,0 +1,232 @@
+.about-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: 'Jost', sans-serif;
+}
+
+.about-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1920&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+.about-hero h1 {
+  font-size: 4rem;
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 1rem;
+  color: var(--cream);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.about-hero p {
+  font-size: 1.5rem;
+  color: var(--cream);
+  font-weight: 300;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.about-section {
+  background: white;
+  border-radius: 15px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e8e8e8;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--pine-dark);
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.about-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.value-item {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.value-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent);
+}
+
+.value-item h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.value-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.products-highlight {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.product-category {
+  background: linear-gradient(135deg, var(--cream) 0%, white 100%);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.product-category:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.product-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--pine-dark);
+}
+
+.product-category p {
+  font-size: 1rem;
+  color: var(--text-dark);
+  text-align: center;
+  margin: 0;
+}
+
+.contact-info {
+  background: linear-gradient(135deg, var(--cream) 0%, white 100%);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+  margin-top: 2rem;
+}
+
+.contact-info p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-dark);
+  text-align: left;
+}
+
+.contact-info strong {
+  color: var(--pine-dark);
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 3rem;
+  }
+
+  .about-hero p {
+    font-size: 1.2rem;
+  }
+
+  .about-content {
+    padding: 2rem 1rem;
+  }
+
+  .about-section {
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-section h2 {
+    font-size: 2rem;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .products-highlight {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .value-item,
+  .product-category {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    height: 50vh;
+  }
+
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-hero p {
+    font-size: 1rem;
+  }
+
+  .about-section {
+    padding: 1.5rem;
+  }
+
+  .about-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .about-section p {
+    font-size: 1rem;
+  }
+}

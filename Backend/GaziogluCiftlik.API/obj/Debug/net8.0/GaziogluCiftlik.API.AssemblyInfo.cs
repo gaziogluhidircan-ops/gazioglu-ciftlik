@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GaziogluCiftlik.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a52f1597222036645c34be8038ec2e1223678943")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83a68c52f6378041e7590f72a0877917be8e1d9d")]
 [assembly: System.Reflection.AssemblyProductAttribute("GaziogluCiftlik.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GaziogluCiftlik.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

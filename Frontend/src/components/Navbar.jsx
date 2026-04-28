@@ -19,7 +19,7 @@ const Navbar = () => {
         <ul className="nav-links">
           <li><Link to="/">Ana Sayfa</Link></li>
           <li><a href="/#products">Ürünlerimiz</a></li>
-          <li><a href="/#about">Hakkımızda</a></li>
+          <li><Link to="/about">Hakkımızda</Link></li>
         </ul>
         <div className="nav-actions">
           <button className="cart-btn" onClick={() => setIsCartOpen(true)}>

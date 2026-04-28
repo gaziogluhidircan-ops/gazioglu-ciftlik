@@ -64,6 +64,17 @@
   border-color: var(--pine);
 }
 
+.form-group input.error, .form-group textarea.error {
+  border-color: #e74c3c;
+  background-color: #fdf2f2;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
 .btn-submit {
   margin-top: 16px;
 }
