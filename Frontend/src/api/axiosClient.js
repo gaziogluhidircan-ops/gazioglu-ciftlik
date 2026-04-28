@@ -1,7 +1,16 @@
 import axios from 'axios';
 
+const getBaseURL = () => {
+  if (import.meta.env.PROD) {
+    // Vercel production - backend deployed separately
+    return 'https://your-backend-url.vercel.app/api';
+  }
+  // Development
+  return 'http://localhost:5155/api';
+};
+
 const axiosClient = axios.create({
-  baseURL: 'http://localhost:5155/api', // Updated to match backend port
+  baseURL: getBaseURL(),
   headers: {
     'Content-Type': 'application/json'
   }
