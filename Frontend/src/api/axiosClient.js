@@ -2,11 +2,11 @@ import axios from 'axios';
 
 const getBaseURL = () => {
   if (import.meta.env.PROD) {
-    // Vercel production - backend deployed separately
-    return 'https://your-backend-url.vercel.app/api';
+    // Vercel production - using Vercel Functions
+    return '/api';
   }
-  // Development
-  return 'http://localhost:5155/api';
+  // Development - using Vercel Functions locally
+  return '/api';
 };
 
 const axiosClient = axios.create({
