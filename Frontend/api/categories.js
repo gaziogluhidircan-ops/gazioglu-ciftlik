@@ -8,10 +8,10 @@ export default async function handler(req, res) {
       case 'GET':
         // Mock data for testing
         const categories = [
-          { id: 1, name: 'Süt Ürünleri', description: 'Taze süt ve süt ürünleri', image_url: '/images/dairy.jpg' },
-          { id: 2, name: 'Yumurta', description: 'Taze çiftlik yumurtaları', image_url: '/images/eggs.jpg' },
-          { id: 3, name: 'Peynir', description: 'Doğal çiftlik peynirleri', image_url: '/images/cheese.jpg' },
-          { id: 4, name: 'Yem ve Saman', description: 'Hayvan yemleri ve saman çeşitleri', image_url: '/images/feed.jpg' }
+          { id: 1, name: 'Yöresel Lezzetler', description: 'Tunceli ve Şarköy yöresinden doğal ürünler', image_url: '/products/ceviz.jpg' },
+          { id: 2, name: 'Organik Yumurta', description: 'Serbest gezen tavuklardan organik yumurtalar', image_url: '/products/koy-yumurtasi.jpg' },
+          { id: 3, name: 'Peynir Çeşitleri', description: 'Geleneksel yöntemlerle üretilmiş yöresel peynirler', image_url: '/products/tulum-peyniri.jpg' },
+          { id: 4, name: 'Zeytin & Zeytinyağı', description: 'Doğal sıkım zeytinyağı ve sofralık zeytin', image_url: '/products/zeytinyagi.jpg' }
         ];
         res.status(200).json(categories);
         break;

@@ -22,9 +22,9 @@ export default async function handler(req, res) {
             notes: 'Kapı önüne bırakınız',
             created_at: '2024-04-28T10:30:00Z',
             items: [
-              { product_id: 1, product_name: 'Taze Tam Yağlı Süt', quantity: 2, unit_price: 25.50, total_price: 51.00 },
-              { product_id: 2, product_name: 'Organik Çiftlik Yumurtası', quantity: 1, unit_price: 18.75, total_price: 18.75 },
-              { product_id: 3, product_name: 'Taze Beyaz Peynir', quantity: 1, unit_price: 85.00, total_price: 85.00 }
+              { product_id: 1, product_name: 'Şarköy Zeytinyağı', quantity: 2, unit_price: 500.00, total_price: 1000.00 },
+              { product_id: 2, product_name: 'Organik Köy Yumurtası (30\\'lu Koli)', quantity: 1, unit_price: 350.00, total_price: 350.00 },
+              { product_id: 3, product_name: 'Tunceli Tulum Peyniri (1 Kilo)', quantity: 1, unit_price: 700.00, total_price: 700.00 }
             ]
           }
         ];
