@@ -9,12 +9,17 @@ const Home = () => {
 
   // Fallback realistic product images based on prompt
   const fallbackProducts = [
-    { id: 1, name: 'Sızma Zeytinyağı', description: 'Doğal taş baskı, cam şişede saf sızma zeytinyağı.', price: 450, stock: 12, imageUrl: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=1000&auto=format&fit=crop' },
-    { id: 2, name: 'Gemlik Zeytini', description: 'Ahşap kasede sunulan özenle seçilmiş siyah ve yeşil zeytinler.', price: 120, stock: 45, imageUrl: 'https://images.unsplash.com/photo-1555507036-ab1f40ce8892?q=80&w=1000&auto=format&fit=crop' },
-    { id: 3, name: 'Erzincan Tulum Peyniri', description: 'Geleneksel yöntemlerle üretilmiş, yoğun aromalı tulum peyniri.', price: 320, stock: 5, imageUrl: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?q=80&w=1000&auto=format&fit=crop' },
-    { id: 4, name: 'Kabuklu Ceviz', description: 'Yeni mahsul, ince kabuklu, içi dolgun taze ceviz.', price: 280, stock: 20, imageUrl: 'https://images.unsplash.com/photo-1599598425947-33004bb434d3?q=80&w=1000&auto=format&fit=crop' },
-    { id: 5, name: 'Kuru Dut', description: 'Güneşte kurutulmuş, doğal tatlı, katkısız kuru dut.', price: 150, stock: 30, imageUrl: 'https://images.unsplash.com/photo-1601646274028-c1164de74fa6?q=80&w=1000&auto=format&fit=crop' },
-    { id: 6, name: 'Üzüm Pekmezi', description: 'Odun ateşinde kaynatılmış, saf ve organik üzüm pekmezi.', price: 180, stock: 15, imageUrl: 'https://images.unsplash.com/photo-1632733473181-edb1a5113dd8?q=80&w=1000&auto=format&fit=crop' },
+    { id: 1, name: 'Şarköy Zeytinyağı (1 Litre)', description: 'Şarköy yöresinden doğal sıkım zeytinyağı.', price: 500, stock: 50, imageUrl: '/products/zeytinyagi.jpg' },
+    { id: 2, name: 'Organik Köy Yumurtası (30\\'lu Koli)', description: 'Serbest gezen tavuklardan organik köy yumurtası.', price: 350, stock: 100, imageUrl: '/products/koy-yumurtasi.jpg' },
+    { id: 3, name: 'Organik Köy Yumurtası (15\\'li Koli)', description: 'Serbest gezen tavuklardan organik köy yumurtası.', price: 200, stock: 100, imageUrl: '/products/koy-yumurtasi.jpg' },
+    { id: 4, name: 'Tunceli Tulum Peyniri (1 Kilo)', description: 'Tunceli yöresine özgü doğal tulum peyniri.', price: 700, stock: 25, imageUrl: '/products/tulum-peyniri.jpg' },
+    { id: 5, name: 'Tunceli Cevizi (1 Kilo)', description: 'Doğal kabuklu Tunceli cevizi.', price: 750, stock: 30, imageUrl: '/products/ceviz.jpg' },
+    { id: 6, name: 'Tunceli Tereyağı (1 Kilo)', description: 'Doğal köy tereyağı.', price: 930, stock: 15, imageUrl: '/products/tereyagi.jpg' },
+    { id: 7, name: 'Kuru Dut (1 Kilo)', description: 'Güneşte kurutulmuş doğal dut.', price: 975, stock: 100, imageUrl: '/products/kuru-dut.jpg' },
+    { id: 8, name: 'Doğal Tunceli Halvori Balı (1 Kilo)', description: 'Tunceli Halvori yöresinden doğal bal.', price: 2600, stock: 20, imageUrl: '/products/halvori-bali.jpg' },
+    { id: 9, name: 'Dut Pekmezi (1 Litre)', description: 'Doğal yapım dut pekmezi.', price: 1400, stock: 30, imageUrl: '/products/dut-pekmezi.jpg' },
+    { id: 10, name: 'Dağ Sarımsağı (1 Kilo)', description: 'Doğal toplanmış dağ sarımsağı.', price: 1800, stock: 15, imageUrl: '/products/dag-sarimsagi.jpg' },
+    { id: 11, name: 'Şarköy Sofralık Zeytin (1 Kilo)', description: 'Şarköy yöresinden sofralık doğal zeytin.', price: 275, stock: 50, imageUrl: '/products/sofralik-zeytin.jpg' }
   ];
 
   useEffect(() => {
